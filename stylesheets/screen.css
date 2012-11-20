@@ -109,7 +109,7 @@ body {
   background-color: #222222;
   overflow: hidden;
   height: 25px;
-  line-height: 27px;
+  line-height: 28px;
 }
 /* line 22, ../sass/screen.scss */
 #languages #language-text {
@@ -259,20 +259,22 @@ body {
   overflow: hidden;
   height: 160px;
   clear: both;
+  z-index: 1;
+  position: relative;
 }
-/* line 115, ../sass/screen.scss */
+/* line 117, ../sass/screen.scss */
 #footer #footer-text {
   width: 960px;
   margin: 0 auto;
 }
-/* line 119, ../sass/screen.scss */
+/* line 121, ../sass/screen.scss */
 #footer p {
   color: #ccd0d8;
   font-size: 14px;
   font-family: "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
   line-height: 18px;
 }
-/* line 125, ../sass/screen.scss */
+/* line 127, ../sass/screen.scss */
 #footer h1 {
   color: #536878;
   font-size: 24px;
@@ -281,14 +283,14 @@ body {
   font-family: "PT Sans Narrow", "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
   text-transform: uppercase;
 }
-/* line 133, ../sass/screen.scss */
+/* line 135, ../sass/screen.scss */
 #footer .contact-method, #footer h2.state {
   color: #536878;
   font-size: 14px;
   font-family: "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
   line-height: 18px;
 }
-/* line 139, ../sass/screen.scss */
+/* line 141, ../sass/screen.scss */
 #footer #first-col {
   margin-left: 70px;
   display: inline;
@@ -296,14 +298,14 @@ body {
   width: 180px;
   padding-top: 18px;
 }
-/* line 145, ../sass/screen.scss */
+/* line 147, ../sass/screen.scss */
 #footer #second-col, #footer #third-col {
   margin-left: 60px;
   display: inline;
   float: left;
   width: 180px;
 }
-/* line 150, ../sass/screen.scss */
+/* line 152, ../sass/screen.scss */
 #footer #forth-col {
   display: inline;
   float: right;
