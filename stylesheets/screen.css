@@ -1,0 +1,312 @@
+/* line 17, ../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 20, ../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
+  line-height: 1;
+}
+
+/* line 22, ../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 24, ../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 26, ../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 28, ../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 101, ../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 30, ../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 114, ../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  src: url('../fonts/../fonts/pt.eot') format('embedded-opentype'), url('../fonts/../fonts/pt.woff') format('woff'), url('../fonts/../fonts/pt.ttf') format('truetype'), url('../fonts/../fonts/pt.svg') format('svg');
+}
+
+@font-face {
+  font-family: "PT Sans Narrow";
+  src: url('../fonts/../fonts/pt-narrow.eot') format('embedded-opentype'), url('../fonts/../fonts/pt-narrow.woff') format('woff'), url('../fonts/../fonts/pt-narrow.ttf') format('truetype'), url('../fonts/../fonts/pt-narrow.svg') format('svg');
+}
+
+@font-face {
+  font-family: "Arimo";
+  src: url('../fonts/../fonts/arimo.eot') format('embedded-opentype'), url('../fonts/../fonts/arimo.woff') format('woff'), url('../fonts/../fonts/arimo.ttf') format('truetype'), url('../fonts/../fonts/arimo.svg') format('svg');
+}
+
+@font-face {
+  font-family: "Merriweather";
+  src: url('../fonts/../fonts/merriweather.eot') format('embedded-opentype'), url('../fonts/../fonts/merriweather.woff') format('woff'), url('../fonts/../fonts/merriweather.ttf') format('truetype'), url('../fonts/../fonts/merriweather.svg') format('svg');
+}
+
+/* line 3, ../sass/screen.scss */
+p, ul {
+  color: #444444;
+  font-family: "Merriweather", "Times New Roman", serif;
+}
+
+/* line 8, ../sass/screen.scss */
+a {
+  text-decoration: none;
+  color: #78a547;
+}
+/* line 4, ../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/typography/links/_hover-link.scss */
+a:hover {
+  text-decoration: underline;
+}
+
+/* line 13, ../sass/screen.scss */
+body {
+  background-image: url("../img/stripebackground.png");
+}
+
+/* line 17, ../sass/screen.scss */
+#languages {
+  background-color: #222222;
+  overflow: hidden;
+  height: 25px;
+  line-height: 27px;
+}
+/* line 22, ../sass/screen.scss */
+#languages #language-text {
+  width: 960px;
+  margin: 0 auto;
+}
+/* line 25, ../sass/screen.scss */
+#languages #language-text p {
+  color: white;
+  display: inline;
+  float: right;
+  font-family: "Arimo", Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+}
+/* line 32, ../sass/screen.scss */
+#languages #language-text img {
+  display: inline;
+  float: right;
+  margin: 5px 0 0 20px;
+}
+
+/* line 39, ../sass/screen.scss */
+#heading {
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+  height: 95px;
+  position: relative;
+  z-index: 2;
+}
+/* line 45, ../sass/screen.scss */
+#heading #heading-text {
+  width: 960px;
+  margin: 0 auto;
+}
+/* line 48, ../sass/screen.scss */
+#heading #heading-text h1 {
+  font-size: 60px;
+  display: inline;
+  line-height: 100px;
+  font-family: "Arimo", Helvetica, sans-serif;
+}
+/* line 54, ../sass/screen.scss */
+#heading #heading-text ul#top-nav {
+  display: inline;
+  float: right;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 60, ../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+#heading #heading-text ul#top-nav li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+  white-space: nowrap;
+  display: inline;
+  float: left;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+/* line 48, ../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+#heading #heading-text ul#top-nav li:first-child, #heading #heading-text ul#top-nav li.first {
+  padding-left: 0;
+}
+/* line 49, ../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+#heading #heading-text ul#top-nav li:last-child {
+  padding-right: 0;
+}
+/* line 50, ../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+#heading #heading-text ul#top-nav li.last {
+  padding-right: 0;
+}
+/* line 57, ../sass/screen.scss */
+#heading #heading-text ul#top-nav a {
+  color: #536878;
+}
+/* line 60, ../sass/screen.scss */
+#heading #heading-text ul#top-nav li {
+  border-right: 1px solid #828282;
+  margin-top: 50px;
+  padding: 0 10px;
+  font-family: "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
+}
+/* line 66, ../sass/screen.scss */
+#heading #heading-text ul#top-nav li.last {
+  border-right: none;
+}
+
+/* line 73, ../sass/screen.scss */
+#main {
+  margin: 0 auto;
+  width: 960px;
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+  overflow: hidden;
+  *zoom: 1;
+  background-color: white;
+}
+/* line 79, ../sass/screen.scss */
+#main #left {
+  margin-left: 45px;
+  background-color: #f2f7e7;
+  width: 232px;
+  border-left: 1px solid #ccd0d8;
+  border-right: 1px solid #ccd0d8;
+  display: inline;
+  float: left;
+}
+/* line 86, ../sass/screen.scss */
+#main #left ul#left-nav {
+  margin-left: 24px;
+  padding-top: 30px;
+}
+/* line 89, ../sass/screen.scss */
+#main #left ul#left-nav li {
+  padding-bottom: 25px;
+  font-family: "PT Sans Narrow", "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 18px;
+}
+/* line 93, ../sass/screen.scss */
+#main #left ul#left-nav li a.top-level {
+  padding-bottom: 25px;
+  display: block;
+  color: #536878;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+/* line 103, ../sass/screen.scss */
+#main #right {
+  margin: 30px;
+  display: inline;
+  float: left;
+}
+
+/* line 109, ../sass/screen.scss */
+#footer {
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+  background-color: #222222;
+  overflow: hidden;
+  height: 160px;
+  clear: both;
+}
+/* line 115, ../sass/screen.scss */
+#footer #footer-text {
+  width: 960px;
+  margin: 0 auto;
+}
+/* line 119, ../sass/screen.scss */
+#footer p {
+  color: #ccd0d8;
+  font-size: 14px;
+  font-family: "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 18px;
+}
+/* line 125, ../sass/screen.scss */
+#footer h1 {
+  color: #536878;
+  font-size: 24px;
+  margin-left: 70px;
+  line-height: 85px;
+  font-family: "PT Sans Narrow", "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+/* line 133, ../sass/screen.scss */
+#footer .contact-method, #footer h2.state {
+  color: #536878;
+  font-size: 14px;
+  font-family: "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 18px;
+}
+/* line 139, ../sass/screen.scss */
+#footer #first-col {
+  margin-left: 70px;
+  display: inline;
+  float: left;
+  width: 180px;
+  padding-top: 18px;
+}
+/* line 145, ../sass/screen.scss */
+#footer #second-col, #footer #third-col {
+  margin-left: 60px;
+  display: inline;
+  float: left;
+  width: 180px;
+}
+/* line 150, ../sass/screen.scss */
+#footer #forth-col {
+  display: inline;
+  float: right;
+  width: 180px;
+  padding: 14px 10px 0 0;
+}

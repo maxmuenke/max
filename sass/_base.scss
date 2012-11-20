@@ -1,0 +1,27 @@
+@import "compass/reset";
+@import "compass/utilities";
+@import "compass/css3";
+@import "compass/typography";
+
+$font-color:                    #444444;
+$default-link-color:            #78a547;
+$alt-link-color:                #536878;
+$footer-font-color:             #ccd0d8;
+$footer-header-color:           #536878;
+$left-nav-color:                #f2f7e7;
+
+@include font-face("PT Sans",
+                    font-files("../fonts/pt.eot", "../fonts/pt.woff", "../fonts/pt.ttf", "../fonts/pt.svg")
+                  );
+
+@include font-face("PT Sans Narrow",
+                    font-files("../fonts/pt-narrow.eot", "../fonts/pt-narrow.woff", "../fonts/pt-narrow.ttf", "../fonts/pt-narrow.svg")
+                  );
+
+@include font-face("Arimo",
+                    font-files("../fonts/arimo.eot", "../fonts/arimo.woff", "../fonts/arimo.ttf", "../fonts/arimo.svg")
+                  );
+
+@include font-face("Merriweather",
+                    font-files("../fonts/merriweather.eot", "../fonts/merriweather.woff", "../fonts/merriweather.ttf", "../fonts/merriweather.svg")
+                  );
