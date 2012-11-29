@@ -1,5 +1,14 @@
 @import "base";
 
+html, body {
+    height: 100%;
+    margin-bottom: -160px;
+}
+
+body {
+    background-image: url('../img/stripebackground.png');
+}
+
 p, ul {
     color: $font-color;
     font-family: "Merriweather", "Times New Roman", serif;
@@ -10,148 +19,88 @@ a {
     @include link-colors($default-link-color);
 }
 
-body {
-    background-image: url('../img/stripebackground.png');
+#content-wrapper {
+    min-height: 100%;
 }
 
-#languages {
-    background-color: #222222;
+#main {
+    background-color: white;
+}
+
+#language-text, #heading-text, #footer-text, #main {
+    width: percentage(960px/1024px);
+    margin: 0 auto;
+}
+
+#language-bar, #footer {
+    background-color: $footer-lang-bar-bg-color;
     overflow: hidden;
-    height: 25px;
-    line-height: 28px;
-    #language-text {
-        width: 960px;
-        margin: 0 auto;
-        p {
-            color: white;
-            @include float-right;
-            font-family: "Arimo", Helvetica, sans-serif;
-            font-size: 12px;
-            font-weight: bold;
-        }
-        img {
+    width: 100%;
+}
+
+#language-bar {
+    height: calc-em(25px, 16px);
+    line-height: calc-em(28px, 16px);
+    p {
+        color: white;
+        @include float-right;
+        font-family: "Arimo", Helvetica, sans-serif;
+        font-size: calc-em(12px, 16px);
+        font-weight: bold;
+    }
+    img {
             @include float-right;
             margin: 5px 0 0 20px;
-        }
     }
 }
 
 #heading {
-    background-color: white;
     @include box-shadow();
-    height: 95px;
+    background: white;
+    width: 100%;
+    height: calc-em(95px, 16px);
     position: relative;
-    z-index: 2;
-    #heading-text {
-        width: 960px;
-        margin: 0 auto;
-        h1 {
-            font-size: 60px;
-            display: inline;
-            line-height: 100px;
-            font-family: "Arimo", Helvetica, sans-serif;
-        }
-        ul#top-nav {
-            @include float-right;
-            @include horizontal-list;
-            a {
-                @include link-colors($alt-link-color);
-            }
-            li {
-                border-right: 1px solid #828282;
-                margin-top: 50px;
-                padding: 0 10px;
-                font-family: "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
-            }
-            li.last {
-                border-right: none;
-            }
-        }
+    z-index: 1;
+}
+
+#heading-text {
+    /* Stopped here. Trying to add margin to top of h1 without line height.
+    Maybe I should just have the h1 in header only. Not in page.*/
+    h1 {
+        font-size: calc-em(60px, 16px);
+        display: inline;
+        line-height: calc-em(60px, 60px);
+        font-family: "Arimo", Helvetica, sans-serif;
     }
 }
 
-#main {
-    margin: 0 auto;
-    width: 960px;
-    @include box-shadow();
-    @include clearfix;
-    background-color: white;
-    #left {
-        margin-left: 45px;
-        background-color: $left-nav-color;
-        width: 232px;
-        border-left: 1px solid #ccd0d8;
-        border-right: 1px solid #ccd0d8;
-        @include float-left;
-        ul#left-nav {
-            margin-left: 24px;
-            padding-top: 30px;
-            li {
-                padding-bottom: 25px;
-                font-family: "PT Sans Narrow", "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
-                font-size: 18px;
-                a.top-level {
-                    padding-bottom: 25px;
-                    display: block;
-                    @include link-colors($alt-link-color);
-                    text-transform: uppercase;
-                    font-size: 24px;
-                }
-            }
-        }
-    }
-    #right {
-        margin: 30px;
-        @include float-left;
-    }
+#top-nav {
+}
+
+#left-column {
+    width: percentage(270/1024);
+    height: 100%;
+    @include float-left;
+}
+
+#right-column {
+    width: percentage(754/1024);
+    min-height: 100%;
+    @include float-left;
+    background-color: yellow;
+}
+
+#left-nav {
+    background-color: $left-nav-bg-color;
+    width: percentage(232/270);
+    border-left: 1px solid #ccd0d8;
+    border-right: 1px solid #ccd0d8;
+    height: 100%;
 }
 
 #footer {
-    @include box-shadow();
-    background-color: #222222;
-    overflow: hidden;
-    height: 160px;
-    clear: both;
-    z-index: 1;
     position: relative;
-    #footer-text {
-        width: 960px;
-        margin: 0 auto;
-    }
-    p {
-        color: $footer-font-color;
-        font-size: 14px;
-        font-family: "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-    }
-    h1 {
-        color: $footer-header-color;
-        font-size: 24px;
-        margin-left: 70px;
-        line-height: 85px;
-        font-family: "PT Sans Narrow", "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
-        text-transform: uppercase;
-    }
-    .contact-method, h2.state {
-        color: $footer-header-color;
-        font-size: 14px;
-        font-family: "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
-        line-height: 18px;
-    }
-    #first-col {
-        margin-left: 70px;
-        @include float-left;
-        width: 180px;
-        padding-top: 18px;
-    }
-    #second-col, #third-col {
-        margin-left: 60px;
-        @include float-left;
-         width: 180px;
-    }
-    #forth-col {
-        @include float-right;
-        width: 180px;
-        padding: 14px 10px 0 0;
-    }
+    margin-top: -160px;
+    height: 160px;
+    clear:both;
 }

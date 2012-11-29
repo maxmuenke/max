@@ -2,13 +2,22 @@
 @import "compass/utilities";
 @import "compass/css3";
 @import "compass/typography";
+@import "compass/layout/sticky-footer";
+
+//My Mixins
+
+@function calc-em($target-px, $context) {
+  @return ($target-px / $context) * 1em;
+}
+
 
 $font-color:                    #444444;
 $default-link-color:            #78a547;
 $alt-link-color:                #536878;
+$footer-lang-bar-bg-color:      #222222;
 $footer-font-color:             #ccd0d8;
-$footer-header-color:           #536878;
-$left-nav-color:                #f2f7e7;
+$footer-headings-color:         #536878;
+$left-nav-bg-color:             #f2f7e7;
 
 @include font-face("PT Sans",
                     font-files("../fonts/pt.eot", "../fonts/pt.woff", "../fonts/pt.ttf", "../fonts/pt.svg")
