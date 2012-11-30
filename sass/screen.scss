@@ -9,6 +9,13 @@ body {
     background-image: url('../img/stripebackground.png');
 }
 
+h1 {
+    font-size: calc-em(60px, 16px);
+    display: inline;
+    line-height: calc-em(115px, 60px);
+    font-family: "Arimo", Helvetica, sans-serif;
+}
+
 p, ul {
     color: $font-color;
     font-family: "Merriweather", "Times New Roman", serif;
@@ -21,10 +28,12 @@ a {
 
 #content-wrapper {
     min-height: 100%;
+    overflow: scroll;
 }
 
 #main {
     background-color: white;
+    @include box-shadow();
 }
 
 #language-text, #heading-text, #footer-text, #main {
@@ -49,8 +58,8 @@ a {
         font-weight: bold;
     }
     img {
-            @include float-right;
-            margin: 5px 0 0 20px;
+        @include float-right;
+        margin: 5px 0 0 20px;
     }
 }
 
@@ -63,39 +72,58 @@ a {
     z-index: 1;
 }
 
-#heading-text {
-    /* Stopped here. Trying to add margin to top of h1 without line height.
-    Maybe I should just have the h1 in header only. Not in page.*/
-    h1 {
-        font-size: calc-em(60px, 16px);
-        display: inline;
-        line-height: calc-em(60px, 60px);
-        font-family: "Arimo", Helvetica, sans-serif;
+#top-nav {
+    @include float-right;
+    @include horizontal-list;
+    a {
+        @include link-colors($alt-link-color);
+    }
+    li {
+        border-right: 1px solid #828282;
+        margin-top: calc-em(61px, 16px);
+        padding: 0 10px;
+        font-family: "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
+    }
+    li.last {
+        border-right: none;
     }
 }
 
-#top-nav {
-}
-
 #left-column {
-    width: percentage(270/1024);
+    width: percentage(232/960);
     height: 100%;
+    margin: 0 percentage(45/960) calc-em(-30px, 16px);
+    padding: calc-em(30px, 16px) 0 0;
     @include float-left;
+    background-color: $left-nav-bg-color;
+    border-left: 1px solid #ccd0d8;
+    border-right: 1px solid #ccd0d8;
 }
 
 #right-column {
-    width: percentage(754/1024);
-    min-height: 100%;
+    width: percentage(593/960);
+    height: 100%;
     @include float-left;
-    background-color: yellow;
+    padding: calc-em(30px, 16px) 0 0;
+    margin: 0 0 calc-em(-30px, 16px) 0;
 }
 
 #left-nav {
-    background-color: $left-nav-bg-color;
-    width: percentage(232/270);
-    border-left: 1px solid #ccd0d8;
-    border-right: 1px solid #ccd0d8;
     height: 100%;
+    margin: 0 percentage(19/232);
+    width: 100%;
+    li {
+        padding-bottom: 25px;
+        font-family: "PT Sans Narrow", "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 18px;
+        a.top-level {
+            padding-bottom: 25px;
+            display: block;
+            @include link-colors($alt-link-color);
+            text-transform: uppercase;
+            font-size: 24px;
+        }
+    }
 }
 
 #footer {
