@@ -6,11 +6,19 @@ html, body {
     background-image: url('../img/stripebackground.png');
 }
 
-h1 {
+h1, h2 {
     font-size: calc-em(60px, 16px);
     display: inline;
     line-height: calc-em(115px, 60px);
     font-family: "Arimo", Helvetica, sans-serif;
+}
+
+h2 {
+    font-size: calc-em(24px, 16px);
+    color: $headings-color;
+    line-height: 1em;
+    margin: 0 0 calc-em(10px, 24px) 0;
+    display: block;
 }
 
 h4 {
@@ -21,7 +29,7 @@ h4 {
 
 p, ul {
     color: $font-color;
-    font-family: "Merriweather", "Times New Roman", serif;
+    font-family: "Merriweather", Georgia, "Times New Roman", serif;
     line-height: calc-em(22px, 16px);
     margin-bottom: calc-em(20px, 16px);
 }
@@ -54,7 +62,7 @@ a {
     a {
         cursor: pointer;
     }
-    a:hover, a.hover {
+    a:hover {
         text-decoration: underline;
     }
     p {
@@ -171,6 +179,6 @@ a {
 }
 
 .contact-method, .state {
-    color: $footer-headings-color;
+    color: $headings-color;
 }
 

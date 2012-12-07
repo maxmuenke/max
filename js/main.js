@@ -1,36 +1,58 @@
 (function() {
 
-    var removeFlags = function() {
-        var removeElement = function(element) {
-            element.parentNode.removeChild(element);
-        };
-        var lang_div = document.getElementById('languages');
-        var links = lang_div.getElementsByTagName('a');
-        for (var i = links.length-1; i >= 0; --i) {
-            removeElement(links[i]);
+    var de_flag = {
+        element: 'img',
+        src: '/img/german-flag.jpg',
+        alt: 'German flag'
+    };
+
+    var en_flag = {
+        element: 'img',
+        src: '/img/us-flag.jpg',
+        alt: 'U.S. Flag'
+    };
+
+    var german = {
+        element: 'a',
+        id: 'german'
+    };
+
+    var english = {
+        element: 'a',
+        id: 'english'
+    };
+
+    var removeElement = function(element) {
+        element.parentNode.removeChild(element);
+    };
+
+    var removeChildrenByTag = function(parentId, tag) {
+        var container = document.getElementById(parentId);
+        var tags = container.getElementsByTagName(tag);
+        for (var i = tags.length-1; i >= 0; --i) {
+            removeElement(tags[i]);
         }
     };
 
-    var imageMarkup= function(file, alt) {
-        var img= document.createElement('img');
-        img.src = file;
-        img.alt = alt;
-        img.title = alt;
-        return img;
+    var markupGenerator = function(object) {
+        var element = document.createElement(object.element);
+        var obj_keys = Object.keys(object);
+        for (var i = 0; i < obj_keys.length; i++ ) {
+            element[obj_keys[i]] = object[obj_keys[i]];
+        }
+        return element;
     };
 
-    var injectLinkedFlag = function(id, img) {
-        var link = document.createElement('a');
-        link.id = id;
-        link.appendChild(img);
-        document.getElementById('languages').appendChild(link);
+    var injectLinkedFlag = function(link_obj, flag_obj) {
+        var linked = markupGenerator(link_obj);
+        var container = document.getElementById('languages');
+        linked.appendChild(markupGenerator(flag_obj));
+        container.insertBefore(linked, container.firstChild);
     };
 
-    removeFlags();
-    var de_flag = imageMarkup('/img/german-flag.jpg', 'German flag');
-    var en_flag = imageMarkup('/img/us-flag.jpg', 'U.S. Flag');
-    injectLinkedFlag('german', de_flag);
-    injectLinkedFlag('english', en_flag);
+    removeChildrenByTag('languages', 'a');
+    injectLinkedFlag(english, en_flag);
+    injectLinkedFlag(german, de_flag);
 
     //Cross browser click event
     var addEvent = function(element, type, method) {

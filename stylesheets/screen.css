@@ -91,7 +91,7 @@ html, body {
 }
 
 /* line 9, ../sass/screen.scss */
-h1 {
+h1, h2 {
   font-size: 3.75em;
   display: inline;
   line-height: 1.917em;
@@ -99,21 +99,30 @@ h1 {
 }
 
 /* line 16, ../sass/screen.scss */
+h2 {
+  font-size: 1.5em;
+  color: #536878;
+  line-height: 1em;
+  margin: 0 0 0.417em 0;
+  display: block;
+}
+
+/* line 24, ../sass/screen.scss */
 h4 {
   font-size: 1.5em;
   font-family: "PT Sans Narrow", "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
   text-transform: uppercase;
 }
 
-/* line 22, ../sass/screen.scss */
+/* line 30, ../sass/screen.scss */
 p, ul {
   color: #444444;
-  font-family: "Merriweather", "Times New Roman", serif;
+  font-family: "Merriweather", Georgia, "Times New Roman", serif;
   line-height: 1.375em;
   margin-bottom: 1.25em;
 }
 
-/* line 29, ../sass/screen.scss */
+/* line 37, ../sass/screen.scss */
 a {
   text-decoration: none;
   color: #78a547;
@@ -123,7 +132,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* line 34, ../sass/screen.scss */
+/* line 42, ../sass/screen.scss */
 #content-wrapper {
   min-height: 100%;
   background: url("../img/body.png") center repeat-y;
@@ -131,32 +140,32 @@ a:hover {
   min-width: 960px;
 }
 
-/* line 41, ../sass/screen.scss */
+/* line 49, ../sass/screen.scss */
 .constrain-960 {
   width: 960px;
   margin: 0 auto;
 }
 
-/* line 46, ../sass/screen.scss */
+/* line 54, ../sass/screen.scss */
 .language-bar, .footer {
   background-color: #222222;
   overflow: hidden;
   width: 100%;
 }
 
-/* line 52, ../sass/screen.scss */
+/* line 60, ../sass/screen.scss */
 .language-bar {
   height: 1.563em;
 }
-/* line 54, ../sass/screen.scss */
+/* line 62, ../sass/screen.scss */
 .language-bar a {
   cursor: pointer;
 }
-/* line 57, ../sass/screen.scss */
-.language-bar a:hover, .language-bar a.hover {
+/* line 65, ../sass/screen.scss */
+.language-bar a:hover {
   text-decoration: underline;
 }
-/* line 60, ../sass/screen.scss */
+/* line 68, ../sass/screen.scss */
 .language-bar p {
   line-height: 2.333em;
   color: white;
@@ -166,14 +175,14 @@ a:hover {
   font-size: 0.75em;
   font-weight: bold;
 }
-/* line 68, ../sass/screen.scss */
+/* line 76, ../sass/screen.scss */
 .language-bar img {
   display: inline;
   float: right;
   margin: 5px 0 0 20px;
 }
 
-/* line 74, ../sass/screen.scss */
+/* line 82, ../sass/screen.scss */
 .heading {
   -webkit-box-shadow: 0px 0px 5px #333333;
   -moz-box-shadow: 0px 0px 5px #333333;
@@ -186,7 +195,7 @@ a:hover {
   border-bottom: 1px solid #999;
 }
 
-/* line 84, ../sass/screen.scss */
+/* line 92, ../sass/screen.scss */
 .top-nav {
   display: inline;
   float: right;
@@ -220,23 +229,23 @@ a:hover {
 .top-nav li.last {
   padding-right: 0;
 }
-/* line 88, ../sass/screen.scss */
+/* line 96, ../sass/screen.scss */
 .top-nav a {
   color: #536878;
 }
-/* line 91, ../sass/screen.scss */
+/* line 99, ../sass/screen.scss */
 .top-nav li {
   border-right: 1px solid #828282;
   margin-top: 3.813em;
   padding: 0 10px;
   font-family: "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
 }
-/* line 97, ../sass/screen.scss */
+/* line 105, ../sass/screen.scss */
 .top-nav li.last {
   border-right: none;
 }
 
-/* line 102, ../sass/screen.scss */
+/* line 110, ../sass/screen.scss */
 .left-column {
   width: 232px;
   margin: 0 46px -1.875em;
@@ -246,7 +255,7 @@ a:hover {
   overflow: hidden;
 }
 
-/* line 110, ../sass/screen.scss */
+/* line 118, ../sass/screen.scss */
 .right-column {
   width: 593px;
   display: inline;
@@ -255,25 +264,25 @@ a:hover {
   margin: 0 0 11.875em 0;
 }
 
-/* line 117, ../sass/screen.scss */
+/* line 125, ../sass/screen.scss */
 .left-nav {
   margin: 0 19px;
   line-height: 1em;
 }
-/* line 120, ../sass/screen.scss */
+/* line 128, ../sass/screen.scss */
 .left-nav li {
   font-family: "PT Sans Narrow", "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 18px;
   padding-bottom: 1.389em;
 }
 
-/* line 127, ../sass/screen.scss */
+/* line 135, ../sass/screen.scss */
 .sub-nav-items {
   margin: 0;
   line-height: 1em;
 }
 
-/* line 132, ../sass/screen.scss */
+/* line 140, ../sass/screen.scss */
 .top-level {
   padding-bottom: 1em;
   display: block;
@@ -283,7 +292,7 @@ a:hover {
   line-height: 1em;
 }
 
-/* line 141, ../sass/screen.scss */
+/* line 149, ../sass/screen.scss */
 .footer {
   -webkit-box-shadow: 0px 0px 5px #333333;
   -moz-box-shadow: 0px 0px 5px #333333;
@@ -294,16 +303,16 @@ a:hover {
   overflow: hidden;
   min-width: 960px;
 }
-/* line 148, ../sass/screen.scss */
+/* line 156, ../sass/screen.scss */
 .footer h4, .footer p {
   color: #ccd0d8;
 }
-/* line 151, ../sass/screen.scss */
+/* line 159, ../sass/screen.scss */
 .footer h4 {
   margin-left: 2.083em;
   line-height: 3.125em;
 }
-/* line 155, ../sass/screen.scss */
+/* line 163, ../sass/screen.scss */
 .footer h5, .footer p {
   font-size: 0.875em;
   font-family: "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
@@ -311,7 +320,7 @@ a:hover {
   margin-bottom: 0;
 }
 
-/* line 163, ../sass/screen.scss */
+/* line 171, ../sass/screen.scss */
 .footer-column {
   width: 180px;
   display: inline;
@@ -319,12 +328,12 @@ a:hover {
   margin: 0 0 0 3.125em;
 }
 
-/* line 169, ../sass/screen.scss */
+/* line 177, ../sass/screen.scss */
 .align-baseline {
   padding-top: 1em;
 }
 
-/* line 173, ../sass/screen.scss */
+/* line 181, ../sass/screen.scss */
 .contact-method, .state {
   color: #536878;
 }
