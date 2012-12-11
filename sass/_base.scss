@@ -11,25 +11,26 @@
 }
 
 
+$border-color:                  #ccd0d8;
 $font-color:                    #444444;
 $default-link-color:            #78a547;
 $alt-link-color:                #536878;
 $footer-lang-bar-bg-color:      #222222;
 $footer-font-color:             #ccd0d8;
-$headings-color:         #536878;
+$headings-color:                #536878;
 
 @include font-face("PT Sans",
-                    font-files("../fonts/pt.eot", "../fonts/pt.woff", "../fonts/pt.ttf", "../fonts/pt.svg")
+                    font-files("/fonts/pt.woff", "/fonts/pt.ttf", "/fonts/pt.svg"), "/fonts/pt.eot"
                   );
 
 @include font-face("PT Sans Narrow",
-                    font-files("../fonts/pt-narrow.eot", "../fonts/pt-narrow.woff", "../fonts/pt-narrow.ttf", "../fonts/pt-narrow.svg")
+                    font-files("/fonts/pt-narrow.woff", "/fonts/pt-narrow.ttf", "/fonts/pt-narrow.svg"), "/fonts/pt-narrow.eot"
                   );
 
 @include font-face("Arimo",
-                    font-files("../fonts/arimo.eot", "../fonts/arimo.woff", "../fonts/arimo.ttf", "../fonts/arimo.svg")
+                    font-files("/fonts/arimo.woff", "/fonts/arimo.ttf", "/fonts/arimo.svg"), "/fonts/arimo.eot"
                   );
 
 @include font-face("Merriweather",
-                    font-files("../fonts/merriweather.eot", "../fonts/merriweather.woff", "../fonts/merriweather.ttf", "../fonts/merriweather.svg")
+                    font-files("/fonts/merriweather.woff", "/fonts/merriweather.ttf", "/fonts/merriweather.svg"), "/fonts/merriweather.eot"
                   );

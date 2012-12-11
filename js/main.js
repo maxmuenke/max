@@ -1,5 +1,4 @@
 (function() {
-
     var de_flag = {
         element: 'img',
         src: '/img/german-flag.jpg',
@@ -35,6 +34,13 @@
     };
 
     var markupGenerator = function(object) {
+        if (!Object.keys) Object.keys = function(o) {
+            if (o !== Object(o))
+                throw new TypeError('Object.keys called on a non-object');
+            var k=[],p;
+            for (p in o) if (Object.prototype.hasOwnProperty.call(o,p)) k.push(p);
+            return k;
+        };
         var element = document.createElement(object.element);
         var obj_keys = Object.keys(object);
         for (var i = 0; i < obj_keys.length; i++ ) {
@@ -49,10 +55,6 @@
         linked.appendChild(markupGenerator(flag_obj));
         container.insertBefore(linked, container.firstChild);
     };
-
-    removeChildrenByTag('languages', 'a');
-    injectLinkedFlag(english, en_flag);
-    injectLinkedFlag(german, de_flag);
 
     //Cross browser click event
     var addEvent = function(element, type, method) {
@@ -80,9 +82,14 @@
         //with the getKeyByValue method.)
     var pages = {
         '/en/index.html': '/de/index.html',
-        '/en/appointments.html': '/de/arzttermin.html',
-        '/en/appointments.html#forms': '/de/arzttermin.html#formular',
-        'workshops.html': 'unterricht.html',
+        '/en/appointments.html': '/de/termine.html',
+        '/en/appointments.html#forms': '/de/termine.html#fragebögen',
+        '/en/workshops.html': '/de/workshops.html',
+        '/en/workshops.html#past': '/de/workshops.html#frühere',
+        '/en/about-acupuncture.html': '/de/über-akupunktur.html',
+        '/en/about-acupuncture.html#videos': '/de/über-akupunktur.html#videos',
+        '/en/about-acupuncture.html#readings': '/de/über-akupunktur.html#artikel-und-bücher',
+        '/en/about.html': '/de/über.html',
         //Returns English key from German value
         getKeyByValue: function(value) {
             for ( var prop in this ) {
@@ -105,10 +112,15 @@
         }
     };
 
+    removeChildrenByTag('languages', 'a');
+    injectLinkedFlag(english, en_flag);
+    injectLinkedFlag(german, de_flag);
+
     var en = document.getElementById('english');
     var de = document.getElementById('german');
     var url = window.location.toString();
     var filename = url.substring(url.lastIndexOf('/')-3);
+
     //Checks if page is written in English or German
     //pages[filename] === English
     //pages.getKeyByValue(filename) === German
@@ -123,3 +135,21 @@
    }
 
 })();
+
+(function($) {
+
+  var allPanels = $('.accordion > dd').hide();
+
+  $('.accordion > dt > a').click(function() {
+      $this = $(this);
+      $target =  $this.parent().next();
+
+      if(!$target.hasClass('active')){
+         allPanels.removeClass('active').slideUp();
+         $target.addClass('active').slideDown();
+      }
+
+    return false;
+  });
+
+})(jQuery);
