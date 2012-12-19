@@ -3,7 +3,7 @@
 html, body {
     height: 100%;
     margin-bottom: -160px;
-    background-image: url('../img/stripebackground.png');
+    background-image: url('/img/stripebackground.png');
 }
 
 h1, h2, h3 {
@@ -273,9 +273,15 @@ a {
     .last {
         border-bottom: none;
     }
-    .expand {
-        padding: 0 1em 0 0;
-        color: white;
+    .expand, .contract {
+        padding: 0 0 0 2em;
     }
+    .expand {
+        background: url('/img/accordion.png') no-repeat 0 0;
+    }
+    .contract {
+        background: url('/img/accordion.png') no-repeat 0 -44px;
+    }
+
 }
 

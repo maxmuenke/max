@@ -91,7 +91,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 html, body {
   height: 100%;
   margin-bottom: -160px;
-  background-image: url("../img/stripebackground.png");
+  background-image: url("/img/stripebackground.png");
 }
 
 /* line 9, ../sass/screen.scss */
@@ -464,7 +464,14 @@ a:hover {
   border-bottom: none;
 }
 /* line 276, ../sass/screen.scss */
+.accordion .expand, .accordion .contract {
+  padding: 0 0 0 2em;
+}
+/* line 279, ../sass/screen.scss */
 .accordion .expand {
-  padding: 0 1em 0 0;
-  color: white;
+  background: url("/img/accordion.png") no-repeat 0 0;
+}
+/* line 282, ../sass/screen.scss */
+.accordion .contract {
+  background: url("/img/accordion.png") no-repeat 0 -44px;
 }

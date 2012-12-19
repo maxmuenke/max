@@ -141,13 +141,25 @@
   var allPanels = $('.accordion > dd').hide();
 
   $('.accordion > dt > a').click(function() {
-      $this = $(this);
-      $target =  $this.parent().next();
+        $this = $(this);
+        $target =  $this.parent().next();
 
-      if(!$target.hasClass('active')){
-         allPanels.removeClass('active').slideUp();
-         $target.addClass('active').slideDown();
-      }
+        if ($this.hasClass('expand')) {
+            $this.removeClass('expand');
+            $this.addClass('contract');
+        }
+        else if ($this.hasClass('contract')) {
+            $this.removeClass('contract');
+            $this.addClass('expand');
+        }
+
+        if (!$target.hasClass('active')) {
+            allPanels.removeClass('active').slideUp();
+            $target.addClass('active').slideDown();
+        }
+        else if ($target.addClass('active')) {
+            $target.removeClass('active').slideUp();
+        }
 
     return false;
   });
