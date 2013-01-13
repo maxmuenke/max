@@ -56,6 +56,12 @@
                     </ul>
                 </div>
                 <div class="right-column">
+                    <h2>Acupuncture Meridians</h2>
+                    <p>One of the most important aspects of Chinese and other eastern medicines is the notion of meridians that run throughout the body. Here are a few images describing those meridians.</p>
+                    <div id="galleria">
+                        <img src="http://farm7.staticflickr.com/6031/6377165239_dfbf791dc1_z.jpg" data-title="Happy Lina" data-description="Lina smiling">
+                        <img src="http://farm7.staticflickr.com/6048/6377161631_c479ec0f3c_z.jpg">
+                    </div>
                     <h2>Videos</h2>
                     <div class="video-slidewrap">
                         <ul class="slider">
@@ -124,9 +130,10 @@
             </div>
         </div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
         <script src="/js/plugin.js"></script>
         <script src="/js/main.js"></script>
+        <script src="/js/vendor/galleria-1.2.8.js"></script>
         <script>
             $(document).ready(function() {
                 $('.video-slidewrap').carousel({
@@ -137,6 +144,14 @@
                     speed: 300 // ms.
                 });
             });
+        </script>
+        <script>
+            Galleria.loadTheme('/stylesheets/themes/classic/galleria.classic.js');
+            Galleria.configure({
+                transition: 'fade',
+                lightbox: true
+            });
+            Galleria.run('#galleria');
         </script>
     </body>
 </html>
