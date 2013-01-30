@@ -1,5 +1,17 @@
 @import "base";
 
+// I.   Primary Styles
+// II.  Heading Section
+// III. Main Content
+//        a. Left Nav
+//        b. Carousel Plugin
+//        c. Accordion
+//        d. Galleria Plugin
+//        e. Events
+// IV.  Footer Section
+
+// -------------------- Primary Styles -------------------- //
+
 html, body {
     height: 100%;
     margin-bottom: -160px;
@@ -28,7 +40,7 @@ h2 {
 }
 
 h3 {
-    font-size: calc-em(24px, 16px);
+    font-size: calc-em(20px, 16px);
     margin: 0 0 calc-em(10px, 24px) 0;
     padding-top: calc-em(15px, 24px);
 }
@@ -51,17 +63,18 @@ a {
     @include link-colors($default-link-color);
 }
 
-#content-wrapper {
-    min-height: 100%;
-    background: url('../img/body.png') center repeat-y;
-    overflow: hidden;
-    min-width: 960px;
-}
-
 .constrain-960 {
     width: 960px;
     margin: 0 auto;
 }
+
+.align-baseline {
+    padding-top: 1em;
+}
+
+// -------------------- End Primary Styles -------------------- //
+
+// -------------------- Heading Section -------------------- //
 
 .language-bar, .footer {
     background-color: $footer-lang-bar-bg-color;
@@ -119,12 +132,15 @@ a {
     }
 }
 
-.left-column {
-    width: 232px;
-    margin: 0 46px calc-em(-30px, 16px);
-    padding: calc-em(30px, 16px) 0 calc-em(160px, 16px);
-    @include float-left;
+// -------------------- End Heading Section -------------------- //
+
+// -------------------- Main Content -------------------- //
+
+#content-wrapper {
+    min-height: 100%;
+    background: url('../img/body.png') center repeat-y;
     overflow: hidden;
+    min-width: 960px;
 }
 
 .right-column {
@@ -132,6 +148,15 @@ a {
     @include float-left;
     padding: calc-em(30px, 16px) 0 0;
     margin: 0 0 calc-em(190px, 16px) 0;
+}
+
+// Left Nav
+.left-column {
+    width: 232px;
+    margin: 0 46px calc-em(-30px, 16px);
+    padding: calc-em(30px, 16px) 0 calc-em(160px, 16px);
+    @include float-left;
+    overflow: hidden;
 }
 
 .left-nav {
@@ -157,6 +182,113 @@ a {
     font-size: calc-em(24px, 18px);
     line-height: 1em;
 }
+// End Left Nav
+
+// Carousel Plugin
+.carousel-tabs { clear: both; }
+.carousel-active-tab { color: red; }
+.carousel-disabled,
+.mr-rotato-disabled { color: #aaa; }
+.video-slidewrap {
+    margin-bottom: 1em;
+}
+.video-slidewrap .carousel-tabs {
+    padding: 0;
+    margin: 1em 0;
+    clear: both;
+}
+.video-slidewrap .carousel-tabs li {
+    display: inline-block;
+    padding: 0 2px;
+}
+.video-slidewrap .carousel-tabs a {
+    background: #ddd;
+    display: inline-block;
+    height: 10px;
+    text-indent: -9999px;
+    width: 10px;
+    border-radius: 5px;
+}
+.ie .video-slidewrap .carousel-tabs li,
+.ie .video-slidewrap .carousel-tabs a {
+    display: block;
+    float: left;
+}
+.video-slidewrap .carousel-tabs .carousel-active-tab a {
+    background: #777;
+}
+// End Carousel Plugin
+
+// Accordion
+.accordion {
+    width: 100%;
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 2em;
+    dt, dd {
+        padding: 10px;
+        line-height: 1em;
+        margin: 0;
+        border: 1px solid $border-color;
+        border-bottom: 0;
+        //&:last-of-type {
+        //    border-bottom: 1px solid $border-color;
+        //}
+        a {
+            display: block;
+            color: $font-color;
+            font-size: calc-em(20px, 16px);
+            text-decoration: none;
+        }
+    }
+    dt {
+        background-color: $border-color;
+        border-bottom: 1px solid white;
+    }
+    dd {
+        border-top: 0;
+    }
+    .last {
+        border-bottom: none;
+    }
+    .expand, .contract {
+        padding: 0 0 0 2em;
+    }
+    .expand {
+        background: url('/img/accordion.png') no-repeat 0 0;
+    }
+    .contract {
+        background: url('/img/accordion.png') no-repeat 0 -44px;
+    }
+}
+// End Accordion
+
+// Galleria Plugin
+#galleria {
+    width: 600px;
+    height: 800px;
+    background-color: #000;
+    margin-bottom: 2em;
+    img {
+        max-width: 100%;
+    }
+}
+// End Galleria Plugin
+
+// Events
+    .future-events, .past-events {
+        p:last-child {
+            margin-bottom: calc-em(20px, 16px);
+        }
+        p {
+            margin-bottom: 0;
+        }
+    }
+// End Events
+
+
+// -------------------- End Main Content -------------------- //
+
+// -------------------- Footer Section -------------------- //
 
 .footer {
     @include box-shadow();
@@ -198,100 +330,9 @@ a {
     margin: 0 0 0 calc-em(40px, 16px);
 }
 
-.align-baseline {
-    padding-top: 1em;
-}
-
 .contact-method, .state {
     color: $headings-color;
 }
 
-// Carousel
-
-.carousel-tabs { clear: both; }
-.carousel-active-tab { color: red; }
-.carousel-disabled,
-.mr-rotato-disabled { color: #aaa; }
-.video-slidewrap {
-    margin-bottom: 1em;
-}
-.video-slidewrap .carousel-tabs {
-    padding: 0;
-    margin: 1em 0;
-    clear: both;
-}
-.video-slidewrap .carousel-tabs li {
-    display: inline-block;
-    padding: 0 2px;
-}
-.video-slidewrap .carousel-tabs a {
-    background: #ddd;
-    display: inline-block;
-    height: 10px;
-    text-indent: -9999px;
-    width: 10px;
-    border-radius: 5px;
-}
-.ie .video-slidewrap .carousel-tabs li,
-.ie .video-slidewrap .carousel-tabs a {
-    display: block;
-    float: left;
-}
-.video-slidewrap .carousel-tabs .carousel-active-tab a {
-    background: #777;
-}
-
-// Accordion
-
-.accordion {
-    width: 100%;
-    border-bottom: 1px solid $border-color;
-    margin-bottom: 2em;
-    dt, dd {
-        padding: 10px;
-        line-height: 1em;
-        margin: 0;
-        border: 1px solid $border-color;
-        border-bottom: 0;
-        //&:last-of-type {
-        //    border-bottom: 1px solid $border-color;
-        //}
-        a {
-            display: block;
-            color: $font-color;
-            font-size: calc-em(20px, 16px);
-            text-decoration: none;
-        }
-    }
-    dt {
-        background-color: $border-color;
-        border-bottom: 1px solid white;
-    }
-    dd {
-        border-top: 0;
-    }
-    .last {
-        border-bottom: none;
-    }
-    .expand, .contract {
-        padding: 0 0 0 2em;
-    }
-    .expand {
-        background: url('/img/accordion.png') no-repeat 0 0;
-    }
-    .contract {
-        background: url('/img/accordion.png') no-repeat 0 -44px;
-    }
-
-}
-
-#galleria {
-    width: 600px;
-    height: 300px;
-    background-color: #000;
-    margin-bottom: 2em;
-    img {
-        max-width: 100%;
-    }
-}
+// -------------------- End Footer Section -------------------- //
 

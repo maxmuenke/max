@@ -1,3 +1,14 @@
+//String formatting helper method
+//See http://stackoverflow.com/a/4256130
+String.prototype.format = function() {
+    var formatted = this;
+    for (var i = 0; i < arguments.length; i++) {
+        var regexp = new RegExp('\\{'+i+'\\}', 'gi');
+        formatted = formatted.replace(regexp, arguments[i]);
+    }
+    return formatted;
+};
+
 (function() {
     var de_flag = {
         element: 'img',
@@ -136,15 +147,76 @@
 
 })();
 
-(function($) {
+$(document).ready(function() {
+var url = String("https://www.google.com/calendar/feeds/40os2gpcsv7id9dnplnkbvqb7k%40group.calendar.google.com/public/full?orderby=starttime&ascending&alt=json");
+var allPanels = $('.accordion > dd').hide();
+var allTitles= $('.accordion > dt > a');
 
-  var allPanels = $('.accordion > dd').hide();
+    //Delete "Turn on Javascript" warning
+    $(".warning").remove();
 
-  $('.accordion > dt > a').click(function() {
+    //Returns the complete markup for an event
+    var event = function(title, new_date, location, description) {
+        return '<div class="event">{0} {1} {2} {3}</div>'.format(title, new_date, location, description);
+    };
+
+    //Get Google Calendar Events
+    $.getJSON(url, function(data) {
+        //Using a try...catch...finally because if data.feed.entry is empty, it breaks horribly with a TypeError
+        try {
+            $.each(data.feed.entry, function(i, item) {
+                var title = "<h3>{0}</h3>".format(item.title.$t);
+                var date = new Date(item.gd$when[0].startTime);
+                var today = new Date();
+                var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+                var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+                var new_date = "<p>When: {0}, {1} {2}, {3}</p>".format(days[date.getDay()], months[date.getMonth()], date.getDate(), date.getFullYear());
+                var location = "<p>Where: {0}</p>".format(item.gd$where[0].valueString);
+                var description = "<p>Description: {0}</p>".format(item.content.$t);
+
+                // Limit the number displayed on the page to 10
+                if (i < 10) {
+                    if (date < today) {
+                        $(".past-events").append(event(title, new_date, location, description));
+                    } else {
+                        //Prepend + insertAfter methods to display soonest upcoming event first
+                        $(".future-events").prepend(function() {
+                            $(event(title, new_date, location, description)).insertAfter($(".future-events > h1"));
+                        });
+                    }
+                }
+            });
+        } catch(e) {
+            //Still log the error
+            console.log(e);
+        } finally {
+            var future_events = (function() {
+                var length = $(".future-events").children("div").length;
+                return length;
+            })();
+
+            var past_events = (function() {
+                var length = $(".past-events").children("div").length;
+                return length;
+            })();
+
+            //Grab number of events within in future-events and if none, display message
+            if (future_events === 0) {
+                $(".future-events").append("<p>There are no upcoming workshops or seminars. Check back soon.</p>");
+            }
+
+            //Grab number of events within in past-events and if none, display message
+            if (past_events === 0) {
+                $(".past-events").append("<p>There are no past workshops or seminars.</p>");
+            }
+        }
+    });
+    $('.accordion > dt > a').click(function() {
         $this = $(this);
         $target =  $this.parent().next();
-
         if ($this.hasClass('expand')) {
+            allTitles.removeClass('contract');
+            allTitles.addClass('expand');
             $this.removeClass('expand');
             $this.addClass('contract');
         }
@@ -152,7 +224,6 @@
             $this.removeClass('contract');
             $this.addClass('expand');
         }
-
         if (!$target.hasClass('active')) {
             allPanels.removeClass('active').slideUp();
             $target.addClass('active').slideDown();
@@ -160,8 +231,6 @@
         else if ($target.addClass('active')) {
             $target.removeClass('active').slideUp();
         }
-
-    return false;
-  });
-
-})(jQuery);
+        return false;
+    });
+});
