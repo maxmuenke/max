@@ -419,28 +419,40 @@ a:hover {
   background: url("/img/accordion.png") no-repeat 0 -44px;
 }
 
-/* line 266, ../sass/screen.scss */
+/* line 265, ../sass/screen.scss */
+.right-column img {
+  padding: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 273, ../sass/screen.scss */
 #galleria {
   width: 600px;
   height: 800px;
   background-color: #000;
   margin-bottom: 2em;
 }
-/* line 271, ../sass/screen.scss */
+/* line 278, ../sass/screen.scss */
 #galleria img {
   max-width: 100%;
+  padding: 0px;
+  border: 0px;
+  float: none;
+  margin: 0px;
 }
 
-/* line 279, ../sass/screen.scss */
+/* line 290, ../sass/screen.scss */
 .future-events p:last-child, .past-events p:last-child {
   margin-bottom: 1.25em;
 }
-/* line 282, ../sass/screen.scss */
+/* line 293, ../sass/screen.scss */
 .future-events p, .past-events p {
   margin-bottom: 0;
 }
 
-/* line 293, ../sass/screen.scss */
+/* line 304, ../sass/screen.scss */
 .footer {
   -webkit-box-shadow: 0px 0px 5px #333333;
   -moz-box-shadow: 0px 0px 5px #333333;
@@ -451,16 +463,16 @@ a:hover {
   overflow: hidden;
   min-width: 960px;
 }
-/* line 300, ../sass/screen.scss */
+/* line 311, ../sass/screen.scss */
 .footer h4, .footer p {
   color: #ccd0d8;
 }
-/* line 303, ../sass/screen.scss */
+/* line 314, ../sass/screen.scss */
 .footer h4 {
   margin-left: 2.083em;
   line-height: 3.125em;
 }
-/* line 307, ../sass/screen.scss */
+/* line 318, ../sass/screen.scss */
 .footer h5, .footer p {
   font-size: 0.875em;
   font-family: "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
@@ -468,7 +480,7 @@ a:hover {
   margin-bottom: 0;
 }
 
-/* line 315, ../sass/screen.scss */
+/* line 326, ../sass/screen.scss */
 .footer-column {
   width: 150px;
   display: inline;
@@ -476,7 +488,7 @@ a:hover {
   margin: 0 0 0 3.125em;
 }
 
-/* line 321, ../sass/screen.scss */
+/* line 332, ../sass/screen.scss */
 .first-footer-column {
   width: 190px;
   display: inline;
@@ -484,7 +496,7 @@ a:hover {
   margin: 0 0 0 3.125em;
 }
 
-/* line 327, ../sass/screen.scss */
+/* line 338, ../sass/screen.scss */
 .last-footer-column {
   width: 180px;
   display: inline;
@@ -492,7 +504,7 @@ a:hover {
   margin: 0 0 0 2.5em;
 }
 
-/* line 333, ../sass/screen.scss */
+/* line 344, ../sass/screen.scss */
 .contact-method, .state {
   color: #536878;
 }

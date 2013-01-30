@@ -262,6 +262,13 @@ a {
 }
 // End Accordion
 
+.right-column img {
+    padding: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    margin-right: 10px;
+}
+
 // Galleria Plugin
 #galleria {
     width: 600px;
@@ -270,6 +277,10 @@ a {
     margin-bottom: 2em;
     img {
         max-width: 100%;
+        padding: 0px;
+        border: 0px;
+        float: none;
+        margin: 0px;
     }
 }
 // End Galleria Plugin
