@@ -9,7 +9,7 @@ String.prototype.format = function() {
     return formatted;
 };
 
-(function() {
+/*(function() {
     var de_flag = {
         element: 'img',
         src: '/img/german-flag.jpg',
@@ -145,7 +145,7 @@ String.prototype.format = function() {
         addEvent(en, 'click', function() { switchUrl(en.id, url, filename); });
    }
 
-})();
+})();*/
 
 $(document).ready(function() {
 var url = String("https://www.google.com/calendar/feeds/40os2gpcsv7id9dnplnkbvqb7k%40group.calendar.google.com/public/full?orderby=starttime&ascending&alt=json");
