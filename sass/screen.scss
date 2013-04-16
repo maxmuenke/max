@@ -1,0 +1,389 @@
+@import "base";
+
+// I.   Primary Styles
+// II.  Heading Section
+// III. Main Content
+//        a. Left Nav
+//        b. Carousel Plugin
+//        c. Accordion
+//        d. Galleria Plugin
+//        e. Events
+// IV.  Footer Section
+
+// -------------------- Primary Styles -------------------- //
+
+html, body {
+    height: 100%;
+    margin-bottom: -160px;
+    background-image: url('/img/stripebackground.png');
+}
+
+h1, h2, h3 {
+    font-family: "Arimo", Helvetica, sans-serif;
+}
+
+h2, h3 {
+    color: $headings-color;
+    line-height: 1em;
+}
+
+h1 {
+    font-size: calc-em(60px, 16px);
+    display: inline;
+    line-height: calc-em(115px, 60px);
+}
+
+h2 {
+    font-size: calc-em(28px, 16px);
+    border-bottom: $border-color solid 1px;
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    font-size: calc-em(20px, 16px);
+    margin: 0 0 calc-em(10px, 24px) 0;
+    padding-top: calc-em(15px, 24px);
+}
+
+h4 {
+    font-size: calc-em(24px, 16px);
+    font-family: "PT Sans Narrow", "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+
+p, ul, dt, dd {
+    color: $font-color;
+    font-family: "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
+    line-height: calc-em(23px, 16px);
+    margin-bottom: calc-em(20px, 16px);
+}
+
+a {
+    @include hover-link;
+    @include link-colors($default-link-color);
+}
+
+.constrain-960 {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.align-baseline {
+    padding-top: 1em;
+}
+
+// -------------------- End Primary Styles -------------------- //
+
+// -------------------- Heading Section -------------------- //
+
+.language-bar, .footer {
+    background-color: $footer-lang-bar-bg-color;
+    overflow: hidden;
+    width: 100%;
+}
+
+.language-bar {
+    height: calc-em(25px, 16px);
+    a {
+        cursor: pointer;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    p {
+        line-height: calc-em(28px, 12px);
+        color: white;
+        @include float-right;
+        font-family: "Arimo", Helvetica, sans-serif;
+        font-size: calc-em(12px, 16px);
+        font-weight: bold;
+    }
+    img {
+        @include float-right;
+        margin: 5px 0 0 20px;
+    }
+}
+
+.heading {
+    @include box-shadow();
+    background: white;
+    width: 100%;
+    height: calc-em(95px, 16px);
+    position: relative;
+    z-index: 1;
+    border-bottom: 1px solid #999;
+}
+
+.top-nav {
+    @include float-right;
+    @include horizontal-list;
+    line-height: 1em;
+    a {
+        @include link-colors($alt-link-color);
+    }
+    li {
+        border-right: 1px solid #828282;
+        margin-top: calc-em(61px, 16px);
+        padding: 0 10px;
+        font-family: "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
+    }
+    li.last {
+        border-right: none;
+    }
+}
+
+// -------------------- End Heading Section -------------------- //
+
+// -------------------- Main Content -------------------- //
+
+#content-wrapper {
+    min-height: 100%;
+    background: url('../img/body.png') center repeat-y;
+    overflow: hidden;
+    min-width: 960px;
+}
+
+.right-column {
+    width: 593px;
+    @include float-left;
+    padding: calc-em(30px, 16px) 0 0;
+    margin: 0 0 calc-em(190px, 16px) 0;
+}
+
+// Left Nav
+.left-column {
+    width: 232px;
+    margin: 0 46px calc-em(-30px, 16px);
+    padding: calc-em(30px, 16px) 0 calc-em(160px, 16px);
+    @include float-left;
+    overflow: hidden;
+}
+
+.left-nav {
+    margin: 0 19px;
+    line-height: 1em;
+    li {
+        font-family: "PT Sans Narrow", "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 18px;
+        padding-bottom: calc-em(25px, 18px);
+    }
+}
+
+.sub-nav-items {
+    margin: 0;
+    line-height: 1em;
+}
+
+.top-level {
+    padding-bottom: 1em;
+    display: block;
+    @include link-colors($alt-link-color);
+    text-transform: uppercase;
+    font-size: calc-em(24px, 18px);
+    line-height: 1em;
+}
+// End Left Nav
+
+// Carousel Plugin
+.carousel-tabs { clear: both; }
+.carousel-active-tab { color: red; }
+.carousel-disabled,
+.mr-rotato-disabled { color: #aaa; }
+.video-slidewrap {
+    margin-bottom: 1em;
+}
+.video-slidewrap .carousel-tabs {
+    padding: 0;
+    margin: 1em 0;
+    clear: both;
+}
+.video-slidewrap .carousel-tabs li {
+    display: inline-block;
+    padding: 0 2px;
+}
+.video-slidewrap .carousel-tabs a {
+    background: #ddd;
+    display: inline-block;
+    height: 10px;
+    text-indent: -9999px;
+    width: 10px;
+    border-radius: 5px;
+}
+.ie .video-slidewrap .carousel-tabs li,
+.ie .video-slidewrap .carousel-tabs a {
+    display: block;
+    float: left;
+}
+.video-slidewrap .carousel-tabs .carousel-active-tab a {
+    background: #777;
+}
+// End Carousel Plugin
+
+// Accordion
+.accordion {
+    width: 100%;
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 2em;
+    dt, dd {
+        padding: 10px;
+        line-height: 1em;
+        margin: 0;
+        border: 1px solid $border-color;
+        border-bottom: 0;
+        //&:last-of-type {
+        //    border-bottom: 1px solid $border-color;
+        //}
+        a {
+            display: block;
+            color: $font-color;
+            font-size: calc-em(20px, 16px);
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+    dt {
+        background-color: $border-color;
+        border-bottom: 1px solid white;
+    }
+    dd {
+        border-top: 0;
+    }
+    .last {
+        border-bottom: none;
+    }
+    .expand, .contract {
+        padding: 0 0 0 2em;
+    }
+    .expand {
+        background: url('/img/accordion.png') no-repeat 0 0;
+    }
+    .contract {
+        background: url('/img/accordion.png') no-repeat 0 -44px;
+    }
+}
+// End Accordion
+
+.right-column img {
+    padding: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    margin: auto 10px 10px auto;
+}
+
+// Galleria Plugin
+#galleria {
+    width: 600px;
+    height: 800px;
+    background-color: #fff;
+    margin-bottom: 2em;
+    img {
+        padding: 0px;
+        border: 0px;
+        float: none;
+        margin: 0px;
+    }
+    .galleria-container {
+        background: #fff;
+    }
+    .galleria-images {
+        .galleria-image > img {
+            cursor: -webkit-zoom-in !important;
+            cursor: -moz-zoom-in !important;
+        }
+    } 
+    .galleria-lightbox-overlay {
+        cursor: -webkit-zoom-out !important;
+        cursor: -moz-zoom-out !important;
+    }
+    .galleria-thumbnails {
+        .galleria-image {
+            background-color: #fff;
+            border: solid 1px #ccc;
+        }
+    }
+    .galleria-image.active {
+        background-color: #000;
+    }
+    .galleria-image.active > img {
+        opacity: 0.6 !important;
+    }
+    .galleria-info {
+        width: 100%;
+        top: auto;
+        bottom: 60px;
+        left: 0;
+        .galleria-info-text {
+            background-color: #fff;
+        }
+        .galleria-info-title {
+            color: $headings-color;
+        }
+        .galleria-info-description {
+            color: $font-color;
+        }
+    }
+}
+// End Galleria Plugin
+
+// Events
+    .future-events, .past-events {
+        p:last-child {
+            margin-bottom: calc-em(20px, 16px);
+        }
+        p {
+            margin-bottom: 0;
+        }
+    }
+// End Events
+
+
+// -------------------- End Main Content -------------------- //
+
+// -------------------- Footer Section -------------------- //
+
+.footer {
+    @include box-shadow();
+    position: relative;
+    margin-top: -160px;
+    height: 160px;
+    overflow: hidden;
+    min-width: 960px;
+    h4, p {
+        color: $footer-font-color;
+    }
+    h4 {
+        margin-left: calc-em(50px, 24px);
+        line-height: calc-em(75px, 24px);
+    }
+    h5, p {
+        font-size: calc-em(14px, 16px);
+        font-family: "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
+        line-height: calc-em(18px, 14px);
+        margin-bottom: 0;
+    }
+}
+
+.footer-column {
+    width: 150px;
+    @include float-left;
+    margin: 0 0 0 calc-em(50px, 16px);
+}
+
+.first-footer-column {
+    width: 190px;
+    @include float-left;
+    margin: 0 0 0 calc-em(50px, 16px);
+}
+
+.last-footer-column {
+    width: 180px;
+    @include float-left;
+    margin: 0 0 0 calc-em(40px, 16px);
+}
+
+.contact-method, .state {
+    color: $headings-color;
+}
+
+// -------------------- End Footer Section -------------------- //
+

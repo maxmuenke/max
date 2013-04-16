@@ -1,0 +1,36 @@
+@import "compass/reset";
+@import "compass/utilities";
+@import "compass/css3";
+@import "compass/typography";
+@import "compass/layout/sticky-footer";
+
+//My Mixins
+
+@function calc-em($target-px, $context) {
+  @return ($target-px / $context) * 1em;
+}
+
+
+$border-color:                  #ccd0d8;
+$font-color:                    #444444;
+$default-link-color:            #78a547;
+$alt-link-color:                #536878;
+$footer-lang-bar-bg-color:      #222222;
+$footer-font-color:             #ccd0d8;
+$headings-color:                #536878;
+
+@include font-face("PT Sans",
+                    font-files("/fonts/pt.woff", "/fonts/pt.ttf", "/fonts/pt.svg"), "/fonts/pt.eot"
+                  );
+
+@include font-face("PT Sans Narrow",
+                    font-files("/fonts/pt-narrow.woff", "/fonts/pt-narrow.ttf", "/fonts/pt-narrow.svg"), "/fonts/pt-narrow.eot"
+                  );
+
+@include font-face("Arimo",
+                    font-files("/fonts/arimo.woff", "/fonts/arimo.ttf", "/fonts/arimo.svg"), "/fonts/arimo.eot"
+                  );
+
+@include font-face("Merriweather",
+                    font-files("/fonts/merriweather.woff", "/fonts/merriweather.ttf", "/fonts/merriweather.svg"), "/fonts/merriweather.eot"
+                  );
