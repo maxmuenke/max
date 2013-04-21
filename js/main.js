@@ -166,12 +166,14 @@ var allTitles= $('.accordion > dt > a');
         try {
             $.each(data.feed.entry, function(i, item) {
                 var title = "<h3>{0}</h3>".format(item.title.$t);
+                console.log(title);
                 var date = new Date(item.gd$when[0].startTime);
                 var today = new Date();
                 var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
                 var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
                 var new_date = "<p>When: {0}, {1} {2}, {3}</p>".format(days[date.getDay()], months[date.getMonth()], date.getDate(), date.getFullYear());
                 var location = "<p>Where: {0}</p>".format(item.gd$where[0].valueString);
+                console.log(location);
                 var description = "<p>Description: {0}</p>".format(item.content.$t);
 
                 // Limit the number displayed on the page to 10
@@ -181,7 +183,7 @@ var allTitles= $('.accordion > dt > a');
                     } else {
                         //Prepend + insertAfter methods to display soonest upcoming event first
                         $(".future-events").prepend(function() {
-                            $(event(title, new_date, location, description)).insertAfter($(".future-events > h1"));
+                            $(event(title, new_date, location, description)).insertAfter($(".future-events > h2"));
                         });
                     }
                 }
